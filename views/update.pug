@@ -1,0 +1,13 @@
+h1 update new title for Book title: #{book.title}, id: #{book.id}
+
+form(action='/books/update/'+book.id, method="POST")
+  label title:&nbsp;
+  input(type="text", name="title")
+  span &nbsp;
+  label description:&nbsp;
+  input(type="text", name="description")
+
+  span &nbsp;
+  button Update
+  br
+  a(href='/books') Go to /books

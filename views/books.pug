@@ -1,0 +1,31 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title codersX
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
+  
+h1 Books Manager
+hr
+form(action="/books",method="GET")
+  input(type="text", name="q")
+  button Search
+ul
+  each book in books
+    li
+      span= book.title
+      span &nbsp;
+      a(href='/books/update/'+book.id) update
+      span &nbsp;
+      a(href='/books/delete/'+book.id) delete
+hr
+h4 Add new book
+form(action="/create", method="POST")
+  label title:&nbsp;
+  input(type="text", name="title")
+  span &nbsp;
+  label description:&nbsp;
+  input(type="text", name="description")
+  span &nbsp;
+  button Create
+      
+  
